@@ -1,0 +1,81 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">name</th>
+      <th scope="col">age</th>
+      <th scope="col">nationalityID</th>
+      <th scope="col">birthDate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pers of person">
+      <th scope="row">1</th>
+      <td>{{ pers.id }}</td>
+      <td>{{ pers.name }}</td>
+      <td>{{ pers.age }}</td>
+      <td>{{ pers.nationalityID }}</td>
+      <td>{{ pers.birthDate }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="container">
+  <form [formGroup]="addForm" (ngSubmit)="Submitted()">
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">name</span>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Username"
+        aria-label="Username"
+        aria-describedby="basic-addon1"
+        formControlName="name"
+      />
+    </div>
+
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">age</span>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Username"
+        aria-label="Username"
+        aria-describedby="basic-addon1"
+        formControlName="age"
+      />
+    </div>
+
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">nationalityID</span>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Username"
+        aria-label="Username"
+        aria-describedby="basic-addon1"
+        formControlName="nationalityID"
+      />
+    </div>
+
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">birthDate</span>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Username"
+        aria-label="Username"
+        aria-describedby="basic-addon1"
+        formControlName="birthDate"
+      />
+    </div>
+
+    <button
+      type="submit"
+      [disabled]="addForm.invalid"
+      class="btn btn-primary mt-3"
+    >
+      submit
+    </button>
+  </form>
+</div>
